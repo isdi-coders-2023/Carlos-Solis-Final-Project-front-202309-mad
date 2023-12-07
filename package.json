@@ -1,5 +1,5 @@
 {
-  "name": "Carlos",
+  "name": "202309-finalchallenge-carlos",
   "version": "1.0.0",
   "description": "challenge final front",
   "type": "module",
@@ -42,7 +42,7 @@
     "sass": "^1.69.3",
     "ts-jest": "^29.1.1",
     "typescript": "^5.2.2",
-    "vite": "^4.4.5",
+    "vite": "4.5.1",
     "@vitejs/plugin-react": "^4.0.3",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
