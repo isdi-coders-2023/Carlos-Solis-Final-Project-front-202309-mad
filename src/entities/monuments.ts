@@ -5,7 +5,7 @@ export type Monument = {
   id: string;
   name: string;
   description: string;
-  category: '' | '';
+  category: 'Arab' | 'Roman';
   img: ImgData;
   author: User;
 };
