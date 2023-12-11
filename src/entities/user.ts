@@ -1,4 +1,4 @@
-import { Recipe } from './recipe';
+import { Monument } from './monuments';
 
 export type LoginUser = {
   email: string;
