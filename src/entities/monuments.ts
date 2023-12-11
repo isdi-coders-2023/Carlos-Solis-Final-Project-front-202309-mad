@@ -1,4 +1,4 @@
-import { ImgData } from '../types/';
+import { ImgData } from '../types/img.data';
 import { User } from './user';
 
 export type Monument = {
