@@ -1,9 +1,10 @@
 import { SyntheticEvent, useState } from 'react';
 import { useUsers } from '../../hooks/users.hooks';
 import { LoginUser } from '../../entities/user';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export function Login() {
+  const navigate = useNavigate();
   const [hasLogin, setHasLogin] = useState(false);
   const { login } = useUsers();
 
@@ -21,7 +22,7 @@ export function Login() {
 
   return (
     <>
-      <h2>Login</h2>
+      <h2>Inicia sesión</h2>
       {!hasLogin && (
         <form onSubmit={handleSubmit} className="login-form" role="form">
           <input type="email" name="email" placeholder="Email" required />
@@ -31,21 +32,20 @@ export function Login() {
             placeholder="Password"
             required
           />
+
           <button className="submit-button" type="submit" role="button">
             Iniciar sesión
           </button>
-          <div className="cancel-button">
-            <Link to={'/'}>
-              <button type="button">Cancel</button>
+
+          <p>Si no estás registrado, regístrate!</p>
+          <div className="register-link-button">
+            <Link to={'/register'}>
+              <button type="button">Registrarse</button>
             </Link>
           </div>
         </form>
       )}
-      {hasLogin && (
-        <div>
-          <p>Estás dentro!</p>
-        </div>
-      )}
+      {hasLogin && navigate('/home')}
     </>
   );
 }

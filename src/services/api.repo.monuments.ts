@@ -1,3 +1,4 @@
+import { serverUrl } from '../config.js';
 import { Monument } from '../entities/monuments.js';
 
 export class ApiRepoMonuments {

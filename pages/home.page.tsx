@@ -1,19 +1,19 @@
 import { Link } from 'react-router-dom';
-import styles from './home.page.module.scss';
+import { List } from '../src/components/list/list';
+import { useSelector } from 'react-redux';
+import { RootState } from '../src/store/store';
 
 export default function HomePage() {
+  const { monuments } = useSelector((state: RootState) => state.MonumentsState);
+
   return (
     <>
-      <div className={styles.entrada}>
-        <p>
-          ¡Bievenidos a Social Monument Club! La red social donde podrás ver tus
-          monumentos favoritos así como compartir tus opiniones de ellos.
-        </p>
+      <div className="create-link-button">
+        <Link to={'/create'}>
+          <button type="button">Crea tu monumento</button>
+        </Link>
       </div>
-      <div className={styles.homebuttons}>
-        <button type="button">Login</button>
-        <button type="button">Register</button>
-      </div>
+      <List monumentsToRender={monuments}></List>
     </>
   );
 }
