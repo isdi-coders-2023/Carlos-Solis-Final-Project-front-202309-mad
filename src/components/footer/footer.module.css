@@ -1,0 +1,18 @@
+@charset "UTF-8";
+.footer {
+  background-color: red;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-width: 98vw; /* Cambiado a max-width y ajustado a 100vw */
+  height: 15vh; /* Ajusta la altura según sea necesario */
+  padding: 1rem;
+  padding-inline: 1rem;
+}
+
+.logotipo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; /* Centra el contenido horizontalmente */
+}/*# sourceMappingURL=footer.module.css.map */

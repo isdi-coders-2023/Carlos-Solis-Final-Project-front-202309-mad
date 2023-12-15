@@ -2,7 +2,6 @@ import { Monument } from '../entities/monuments.js';
 
 export class ApiRepoMonuments {
   apiUrl = serverUrl + '/monuments';
-  // eslint-disable-next-line no-unused-vars
   constructor(public token: string) {
     console.log('Token', this.token);
   }
