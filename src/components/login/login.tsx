@@ -1,4 +1,5 @@
-import { SyntheticEvent, useState } from 'react';
+import { SyntheticEvent, useEffect, useState } from 'react';
+
 import { useUsers } from '../../hooks/users.hooks';
 import { LoginUser } from '../../entities/user';
 import { Link, useNavigate } from 'react-router-dom';
@@ -19,7 +20,11 @@ export function Login() {
     login(loginUser);
     setHasLogin(true);
   };
-
+  useEffect(() => {
+    if (hasLogin) {
+      navigate('/home');
+    }
+  }, [hasLogin, navigate]);
   return (
     <>
       <h2>Inicia sesión</h2>
@@ -45,7 +50,6 @@ export function Login() {
           </div>
         </form>
       )}
-      {hasLogin && navigate('/home')}
     </>
   );
 }

@@ -21,7 +21,7 @@ export const loadOneMonumentThunk = createAsyncThunk<
 export const createMonumentThunk = createAsyncThunk<
   Monument,
   { repo: ApiRepoMonuments; monumentToAdd: FormData }
->('monuments/create', async ({ repo, monumentToAdd }) => {
+>('monuments/createmonument', async ({ repo, monumentToAdd }) => {
   const createMonument = await repo.createMonument(monumentToAdd);
   return createMonument;
 });
@@ -35,9 +35,9 @@ export const updateMonumentThunk = createAsyncThunk<
 });
 
 export const deleteMonumentThunk = createAsyncThunk<
-  Monument,
+  Monument['id'],
   { repo: ApiRepoMonuments; id: Monument['id'] }
->('monument/delete', async ({ repo, id }) => {
-  const deleteMonument = await repo.deleteMonument(id);
-  return deleteMonument;
+>('delete', async ({ repo, id }) => {
+  await repo.deleteMonument(id);
+  return id;
 });

@@ -1,4 +1,4 @@
-import MonumentForm from 
+import MonumentForm from '../monumentForm/monument.form';
 
 export default function CreateMonumentPage() {
   return (

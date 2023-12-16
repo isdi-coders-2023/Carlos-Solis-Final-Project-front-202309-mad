@@ -22,8 +22,8 @@ export function useMonuments() {
     dispatch(setCurrentMonumentItem(monumentItem));
   };
 
-  const loadAllMonuments = () => {
-    dispatch(loadMonumentsThunk(monumentsRepo));
+  const loadAllMonuments = async () => {
+    dispatch(loadMonumentsThunk({ repo: monumentsRepo }));
   };
 
   const loadOneMonument = (id: string) => {

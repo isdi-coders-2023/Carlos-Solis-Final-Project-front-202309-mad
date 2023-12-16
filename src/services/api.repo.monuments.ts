@@ -8,7 +8,7 @@ export class ApiRepoMonuments {
   }
 
   async createMonument(newMonument: FormData): Promise<Monument> {
-    const url = this.apiUrl + '/create';
+    const url = this.apiUrl + '/createmonument';
     const response = await fetch(url, {
       method: 'POST',
       body: newMonument,

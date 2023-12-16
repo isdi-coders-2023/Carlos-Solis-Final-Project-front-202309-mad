@@ -12,7 +12,7 @@ export type MonumentsState = {
   monuments: Monument[];
   monumentState: 'idle' | 'loading' | 'loaded' | 'error';
   monumentDeleteState: 'idle' | 'loading';
-  monumentFilter: '' | '' | '' | '';
+  monumentFilter: 'Todos los monuments' | 'Arab' | 'Roman';
 };
 
 const initialState: MonumentsState = {
@@ -20,7 +20,7 @@ const initialState: MonumentsState = {
   monuments: [],
   monumentState: 'idle',
   monumentDeleteState: 'idle',
-  monumentFilter: '',
+  monumentFilter: 'Todos los monuments',
 };
 
 export const monumentsSlice = createSlice({
@@ -75,13 +75,16 @@ export const monumentsSlice = createSlice({
       return state;
     });
 
-    builder.addCase(deleteMonumentThunk.fulfilled, (state: MonumentsState) => {
-      state.monumentDeleteState = 'idle';
-    });
-
-    builder.addCase(deleteMonumentThunk.pending, (state: MonumentsState) => {
-      state.monumentDeleteState = 'loading';
-    });
+    builder.addCase(
+      deleteMonumentThunk.fulfilled,
+      (state: MonumentsState, { payload }: PayloadAction<Monument['id']>) => {
+        state.monuments.splice(
+          state.monuments.findIndex((item) => item.id === payload),
+          1
+        );
+        return state;
+      }
+    );
 
     builder.addCase(
       createMonumentThunk.fulfilled,

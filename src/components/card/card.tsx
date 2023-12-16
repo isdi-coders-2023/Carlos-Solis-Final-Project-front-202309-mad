@@ -1,5 +1,4 @@
 import styles from './card.module.scss';
-import { makeImageURL } from '../../services/image';
 import { Monument } from '../../entities/monuments';
 import { useMonuments } from '../../hooks/monuments.hooks';
 
@@ -9,19 +8,13 @@ type Props = {
 
 export function Card({ monument }: Props) {
   const { handleDetailsPage /* , deleteRecipe */ } = useMonuments();
-  const monumentImage =
-    monument &&
-    monument.img &&
-    makeImageURL(monument?.img.publicId, monument?.img.height, 150);
-
   return (
     <div className={styles.Card}>
       <figure>
         <img
-          src={monumentImage}
-          alt={`imagen de ${monument.name}`}
+          src={monument.monumentImg.url}
           onClick={() => handleDetailsPage(monument)}
-          className={styles.monumentImg}
+          className={styles.monumentImage}
         />
       </figure>
       <div className={styles.cardInfoContainer}>

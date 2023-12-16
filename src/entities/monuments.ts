@@ -6,7 +6,7 @@ export type Monument = {
   name: string;
   description: string;
   category: 'Arab' | 'Roman';
-  img: ImgData;
+  monumentImg: ImgData;
   author: User;
   culture: string;
 };
