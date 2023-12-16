@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { useUsers } from '../../hooks/users.hooks';
 import styles from './logout.button.module.scss';
 
@@ -9,15 +8,14 @@ export function LogoutButton() {
     <>
       {loginLoadState === 'logged' && (
         <div className="login-link-button">
-          <Link to={'/login'}>
-            <button
-              className={styles.logoutbutton}
-              onClick={logout}
-              role="button"
-            >
-              Logout
-            </button>
-          </Link>
+          <button
+            className={styles.logoutbutton}
+            onClick={logout}
+            onKeyDown={logout}
+            role="button"
+          >
+            Logout
+          </button>
         </div>
       )}
     </>

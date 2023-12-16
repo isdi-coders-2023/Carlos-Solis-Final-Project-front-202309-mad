@@ -24,11 +24,11 @@ export default function MonumentForm() {
         className={styles.createMonumentForm}
         role="form"
       >
-        <input type="text" name="nombre" placeholder="Titulo del monumento" />
-        <input type="text" name="cultura" placeholder="cultura" required />
+        <input type="text" name="name" placeholder="Titulo del monumento" />
+        <input type="text" name="culture" placeholder="cultura" required />
         <input
           type="text"
-          name="descripcion"
+          name="description"
           placeholder="Descripcion del monumento"
         />
         <select
@@ -42,7 +42,7 @@ export default function MonumentForm() {
         </select>
         <input
           type="file"
-          name="img"
+          name="monumentImg"
           id="img"
           placeholder="Inserta aqui la imagen "
         />

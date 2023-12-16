@@ -21,7 +21,7 @@ export const loadOneMonumentThunk = createAsyncThunk<
 export const createMonumentThunk = createAsyncThunk<
   Monument,
   { repo: ApiRepoMonuments; monumentToAdd: FormData }
->('monuments/createmonument', async ({ repo, monumentToAdd }) => {
+>('monuments/create', async ({ repo, monumentToAdd }) => {
   const createMonument = await repo.createMonument(monumentToAdd);
   return createMonument;
 });

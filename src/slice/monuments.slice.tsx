@@ -12,7 +12,7 @@ export type MonumentsState = {
   monuments: Monument[];
   monumentState: 'idle' | 'loading' | 'loaded' | 'error';
   monumentDeleteState: 'idle' | 'loading';
-  monumentFilter: 'Todos los monuments' | 'Arab' | 'Roman';
+  monumentFilter: 'Todos los monumentos' | 'Arab' | 'Roman';
 };
 
 const initialState: MonumentsState = {
@@ -20,7 +20,7 @@ const initialState: MonumentsState = {
   monuments: [],
   monumentState: 'idle',
   monumentDeleteState: 'idle',
-  monumentFilter: 'Todos los monuments',
+  monumentFilter: 'Todos los monumentos',
 };
 
 export const monumentsSlice = createSlice({

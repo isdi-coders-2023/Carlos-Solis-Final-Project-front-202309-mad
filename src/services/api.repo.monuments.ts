@@ -4,11 +4,12 @@ import { Monument } from '../entities/monuments.js';
 export class ApiRepoMonuments {
   apiUrl = serverUrl + '/monuments';
   constructor(public token: string) {
-    console.log('Token', this.token);
+    this.token = token;
   }
 
   async createMonument(newMonument: FormData): Promise<Monument> {
-    const url = this.apiUrl + '/createmonument';
+    const url = this.apiUrl + '/create';
+    console.log('URL SOLICITUD', url);
     const response = await fetch(url, {
       method: 'POST',
       body: newMonument,

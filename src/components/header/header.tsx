@@ -5,7 +5,7 @@ export function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.logotipo}>
-        <Link to="../../../pages/home.page.tsx">
+        <Link to="../../components/pages/login.page.tsx">
           <img src="../../../logo.png" alt="Logo de monumento" width={50} />{' '}
         </Link>
       </div>

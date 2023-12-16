@@ -10,21 +10,27 @@ import {
 } from '../slice/monuments.thunk';
 import { setCurrentMonumentItem } from '../slice/monuments.slice';
 import { Monument } from '../entities/monuments';
+import { useCallback, useMemo } from 'react';
 
 export function useMonuments() {
   const dispatch = useDispatch<AppDispatch>();
 
   const { token } = useSelector((state: RootState) => state.UsersState);
-
-  const monumentsRepo = new ApiRepoMonuments(token!);
+  const {
+    monuments,
+    currentMonument,
+    //monumentDeleteState,
+    //monumentUpdateState,
+  } = useSelector((state: RootState) => state.MonumentsState);
+  const monumentsRepo = useMemo(() => new ApiRepoMonuments(token!), [token]);
 
   const handleDetailsPage = async (monumentItem: Monument) => {
     dispatch(setCurrentMonumentItem(monumentItem));
   };
 
-  const loadAllMonuments = async () => {
-    dispatch(loadMonumentsThunk({ repo: monumentsRepo }));
-  };
+  const loadAllMonuments = useCallback(async () => {
+    dispatch(loadMonumentsThunk(monumentsRepo));
+  }, [monumentsRepo, dispatch]);
 
   const loadOneMonument = (id: string) => {
     dispatch(loadOneMonumentThunk({ repo: monumentsRepo, id }));
@@ -53,5 +59,7 @@ export function useMonuments() {
     createMonument,
     updateCurrentMonument,
     handleDetailsPage,
+    monuments,
+    currentMonument,
   };
 }
