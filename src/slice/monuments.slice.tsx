@@ -5,22 +5,25 @@ import {
   deleteMonumentThunk,
   loadOneMonumentThunk,
   loadMonumentsThunk,
+  updateMonumentThunk,
 } from './monuments.thunk';
 
 export type MonumentsState = {
   currentMonument: Monument | null;
   monuments: Monument[];
   monumentState: 'idle' | 'loading' | 'loaded' | 'error';
-  monumentDeleteState: 'idle' | 'loading';
-  monumentFilter: 'Todos los monumentos' | 'Arab' | 'Roman';
+  monumentUpdateState: 'idle' | 'loading';
+  monumentDeleteState: 'idle' | 'loading' | 'deleted' | 'error';
+  monumentFilter: 'Mis recetas' | 'Galletas' | 'Tortas' | 'Todas las recetas';
 };
 
 const initialState: MonumentsState = {
   currentMonument: null,
   monuments: [],
   monumentState: 'idle',
+  monumentUpdateState: 'idle',
   monumentDeleteState: 'idle',
-  monumentFilter: 'Todos los monumentos',
+  monumentFilter: 'Todas las recetas',
 };
 
 export const monumentsSlice = createSlice({
@@ -78,13 +81,23 @@ export const monumentsSlice = createSlice({
     builder.addCase(
       deleteMonumentThunk.fulfilled,
       (state: MonumentsState, { payload }: PayloadAction<Monument['id']>) => {
-        state.monuments.splice(
+        state.monumentState.slice(
           state.monuments.findIndex((item) => item.id === payload),
           1
         );
+        state.monumentDeleteState = 'deleted';
         return state;
       }
     );
+    builder.addCase(deleteMonumentThunk.pending, (state: MonumentsState) => {
+      state.monumentDeleteState = 'loading';
+      return state;
+    });
+
+    builder.addCase(deleteMonumentThunk.rejected, (state: MonumentsState) => {
+      state.monumentState = 'error';
+      return state;
+    });
 
     builder.addCase(
       createMonumentThunk.fulfilled,
@@ -93,6 +106,34 @@ export const monumentsSlice = createSlice({
         monuments: [...state.monuments, payload],
       })
     );
+
+    builder.addCase(
+      updateMonumentThunk.fulfilled,
+      (state: MonumentsState, { payload }: PayloadAction<Monument>) => {
+        const findMonumentIndex = state.monuments.findIndex(
+          (item) => item.id === payload.id
+        );
+        if (findMonumentIndex !== -1) {
+          // Actualizar la receta en la lista de recetas
+          state.monuments[findMonumentIndex] = payload;
+          // Actualizar la receta actual si es la misma receta que se ha actualizado
+          if (
+            state.currentMonument &&
+            state.currentMonument.id === payload.id
+          ) {
+            state.currentMonument = payload;
+          }
+        }
+
+        state.monumentUpdateState = 'idle';
+        return state;
+      }
+    );
+
+    builder.addCase(updateMonumentThunk.pending, (state: MonumentsState) => {
+      state.monumentUpdateState = 'loading';
+      return state;
+    });
   },
 });
 

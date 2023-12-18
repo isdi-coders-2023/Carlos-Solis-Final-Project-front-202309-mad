@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import userEvent from '@testing-library/user-event';
 import { useUsers } from '../../hooks/users.hooks';
 
-jest.mock('../../hooks/users.hook', () => ({
+jest.mock('../../hooks/users.hooks.tsx', () => ({
   useUsers: jest.fn().mockReturnValue({
     register: jest.fn(),
   }),

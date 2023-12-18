@@ -19,8 +19,8 @@ export function useMonuments() {
   const {
     monuments,
     currentMonument,
-    //monumentDeleteState,
-    //monumentUpdateState,
+    monumentDeleteState,
+    monumentUpdateState,
   } = useSelector((state: RootState) => state.MonumentsState);
   const monumentsRepo = useMemo(() => new ApiRepoMonuments(token!), [token]);
 
@@ -61,5 +61,7 @@ export function useMonuments() {
     handleDetailsPage,
     monuments,
     currentMonument,
+    monumentUpdateState,
+    monumentDeleteState,
   };
 }

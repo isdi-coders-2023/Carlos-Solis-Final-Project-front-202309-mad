@@ -7,7 +7,7 @@ const RegisterPage = lazy(() => import('../pages/register.page'));
 const ErrorPage = lazy(() => import('../pages/error.page'));
 const CreateMonumentPage = lazy(() => import('../pages/create.monument.page'));
 const DetailsPage = lazy(() => import('../pages/details.page'));
-
+const EditMonumentPage = lazy(() => import('../pages/edit.page'));
 export const AppRoutes = () => (
   <Suspense>
     <Routes>
@@ -18,6 +18,11 @@ export const AppRoutes = () => (
       <Route
         path="/create"
         element={<CreateMonumentPage></CreateMonumentPage>}
+      ></Route>
+
+      <Route
+        path="/editpage/:id"
+        element={<EditMonumentPage></EditMonumentPage>}
       ></Route>
       <Route path="/details/:id" element={<DetailsPage></DetailsPage>}></Route>
       <Route path="/error" element={<ErrorPage></ErrorPage>}></Route>

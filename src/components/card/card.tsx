@@ -1,33 +1,49 @@
+/* Import { Link } from 'react-router-dom'; */
 import styles from './card.module.scss';
 import { Monument } from '../../entities/monuments';
 import { useMonuments } from '../../hooks/monuments.hooks';
+import { Link } from 'react-router-dom';
 
 type Props = {
   monument: Monument;
 };
 
 export function Card({ monument }: Props) {
-  const { handleDetailsPage /* , deleteRecipe */ } = useMonuments();
+  const { handleDetailsPage } = useMonuments();
+
   return (
-    <div className={styles.Card}>
-      <figure>
-        <img
-          src={monument.monumentImg.url}
-          onClick={() => handleDetailsPage(monument)}
-          className={styles.monumentImage}
-        />
-      </figure>
-      <div className={styles.cardInfoContainer}>
-        <div className={styles.cardTitle}>
-          <p className={styles.cardTitleP}>{monument.name}</p>
-        </div>
-        <div className={styles.cardCulture}>
-          <p className={styles.cardCultureP}>{monument.culture}</p>
-        </div>
-        <div className={styles.cardDescription}>
-          <p className={styles.cardDescriptionP}>{monument.description}</p>
-        </div>
+    <>
+      <div className={styles.card}>
+        <article>
+          <figure>
+            <img
+              src={monument.monumentImg.url}
+              alt={`imagen de ${monument.name}`}
+              className={styles.recipeImg}
+            ></img>
+          </figure>
+          <div className="card-info-container">
+            <div className={styles.cardtitle}>
+              <p className={styles.cardtitleP}>{monument.name}</p>
+            </div>
+            <div className={styles.cardIngredients}>
+              <p className={styles.cardIngredientsP}>{monument.culture}</p>
+            </div>
+            <div className={styles.cardDescription}>
+              <p className={styles.cardDescriptionP}>{monument.description}</p>
+            </div>
+          </div>
+          <button className="details">
+            <Link
+              to={'/details/' + monument.id}
+              onClick={() => handleDetailsPage(monument)}
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              Show Details
+            </Link>
+          </button>
+        </article>
       </div>
-    </div>
+    </>
   );
 }

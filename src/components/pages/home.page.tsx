@@ -1,19 +1,18 @@
-import { Link, useNavigate } from 'react-router-dom';
-import { List } from '../../../src/components/list/list';
+import { Link } from 'react-router-dom';
+import { List } from '../../components/list/list';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../../src/store/store';
-import { useEffect } from 'react';
+import { RootState } from '../../store/store';
 
-export default function HomePage() {
+export default function MainPage() {
   const { monuments } = useSelector((state: RootState) => state.MonumentsState);
-  const navigate = useNavigate();
-  useEffect(() => {
-    navigate('/home');
-  });
 
   return (
     <>
-      <button type="button">Crear monumento</button>
+      <div className="create-link-button">
+        <Link to={'/create'}>
+          <button type="button">Crea monumento</button>
+        </Link>
+      </div>
       <List monumentsToRender={monuments}></List>
     </>
   );

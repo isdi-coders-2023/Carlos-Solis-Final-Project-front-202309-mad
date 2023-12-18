@@ -26,10 +26,13 @@ export class ApiRepoMonuments {
     id: string,
     updatedMonument: FormData
   ): Promise<Monument> {
-    const url = this.apiUrl + `/update/${id}`;
+    const url = this.apiUrl + `/${id}`;
     const response = await fetch(url, {
       method: 'PATCH',
       body: updatedMonument,
+      headers: {
+        Authorization: 'Bearer' + this.token,
+      },
     });
 
     if (!response.ok)
@@ -37,14 +40,14 @@ export class ApiRepoMonuments {
     return response.json();
   }
 
-  async deleteMonument(id: string): Promise<Monument> {
-    const url = this.apiUrl + `/delete/${id}`;
+  async deleteMonument(id: Monument['id']): Promise<boolean> {
+    const url = this.apiUrl + `/${id}`;
     const response = await fetch(url, {
       method: 'DELETE',
     });
     if (!response.ok)
       throw new Error(response.status + ' ' + response.statusText);
-    return {} as Monument;
+    return response.ok;
   }
 
   async getAllMonuments(): Promise<Monument[]> {
