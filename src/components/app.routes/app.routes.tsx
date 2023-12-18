@@ -19,7 +19,6 @@ export const AppRoutes = () => (
         path="/create"
         element={<CreateMonumentPage></CreateMonumentPage>}
       ></Route>
-
       <Route
         path="/editpage/:id"
         element={<EditMonumentPage></EditMonumentPage>}

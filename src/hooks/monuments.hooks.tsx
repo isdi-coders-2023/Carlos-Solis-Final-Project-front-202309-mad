@@ -47,6 +47,7 @@ export function useMonuments() {
   };
 
   const updateCurrentMonument = (id: string, monumentToUpdate: FormData) => {
+    console.log('desde el hook', token);
     dispatch(
       updateMonumentThunk({ repo: monumentsRepo, id, monumentToUpdate })
     );

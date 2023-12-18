@@ -12,3 +12,10 @@
   font-size: 12rem;
   margin: 0;
 }
+
+.create-link-button {
+  display: flex;
+  flex-direction: row-reverse;
+  align-content: stretch;
+  justify-content: center;
+}

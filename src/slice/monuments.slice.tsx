@@ -14,7 +14,7 @@ export type MonumentsState = {
   monumentState: 'idle' | 'loading' | 'loaded' | 'error';
   monumentUpdateState: 'idle' | 'loading';
   monumentDeleteState: 'idle' | 'loading' | 'deleted' | 'error';
-  monumentFilter: 'Mis recetas' | 'Galletas' | 'Tortas' | 'Todas las recetas';
+  monumentFilter: 'Mis monumentos' | 'Arab' | 'Roman' | 'Todos los monumentos';
 };
 
 const initialState: MonumentsState = {
@@ -23,7 +23,7 @@ const initialState: MonumentsState = {
   monumentState: 'idle',
   monumentUpdateState: 'idle',
   monumentDeleteState: 'idle',
-  monumentFilter: 'Todas las recetas',
+  monumentFilter: 'Todos los monumentos',
 };
 
 export const monumentsSlice = createSlice({
@@ -81,7 +81,7 @@ export const monumentsSlice = createSlice({
     builder.addCase(
       deleteMonumentThunk.fulfilled,
       (state: MonumentsState, { payload }: PayloadAction<Monument['id']>) => {
-        state.monumentState.slice(
+        state.monuments.splice(
           state.monuments.findIndex((item) => item.id === payload),
           1
         );
@@ -114,9 +114,7 @@ export const monumentsSlice = createSlice({
           (item) => item.id === payload.id
         );
         if (findMonumentIndex !== -1) {
-          // Actualizar la receta en la lista de recetas
           state.monuments[findMonumentIndex] = payload;
-          // Actualizar la receta actual si es la misma receta que se ha actualizado
           if (
             state.currentMonument &&
             state.currentMonument.id === payload.id

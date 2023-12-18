@@ -31,7 +31,7 @@ export class ApiRepoMonuments {
       method: 'PATCH',
       body: updatedMonument,
       headers: {
-        Authorization: 'Bearer' + this.token,
+        Authorization: 'Bearer ' + this.token,
       },
     });
 
@@ -44,6 +44,9 @@ export class ApiRepoMonuments {
     const url = this.apiUrl + `/${id}`;
     const response = await fetch(url, {
       method: 'DELETE',
+      headers: {
+        Authorization: 'Bearer ' + this.token,
+      },
     });
     if (!response.ok)
       throw new Error(response.status + ' ' + response.statusText);

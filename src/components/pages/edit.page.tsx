@@ -2,7 +2,7 @@ import { SyntheticEvent, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useMonuments } from '../../hooks/monuments.hooks';
 import React from 'react';
-
+import styles from './edit.page.module.scss';
 export default function EditMonumentPage() {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -42,6 +42,7 @@ export default function EditMonumentPage() {
     event.preventDefault();
     const formElement = event.target as HTMLFormElement;
     const updatedFormData = new FormData(formElement);
+    console.log('desde editpage', updatedFormData);
     updateCurrentMonument(findMonument!.id, updatedFormData);
     navigate('/home');
   };

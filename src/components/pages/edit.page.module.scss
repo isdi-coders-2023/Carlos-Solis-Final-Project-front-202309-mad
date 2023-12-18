@@ -1,0 +1,10 @@
+.createMonumentForm {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 80vw; /* Cambiado a viewport width */
+
+  /* Añadido espaciado entre elementos */
+  margin-top: 5px;
+}

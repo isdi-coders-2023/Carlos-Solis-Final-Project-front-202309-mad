@@ -39,7 +39,7 @@ export function Card({ monument }: Props) {
               onClick={() => handleDetailsPage(monument)}
               style={{ textDecoration: 'none', color: 'inherit' }}
             >
-              Show Details
+              Detalles
             </Link>
           </button>
         </article>
