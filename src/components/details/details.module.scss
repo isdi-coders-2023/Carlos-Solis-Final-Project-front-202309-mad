@@ -1,6 +1,49 @@
-.deleteButtonContainer img,
-.editButtonContainer img {
-  width: 40px;
-  height: 40px;
+.details {
+  margin-top: 70px;
+  padding: 80px;
+  box-sizing: border-box;
+  background-color: #f0f0f0; /* Fondo gris */
+  border-radius: 8px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  img {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .card-name,
+  .card-culture,
+  .card-description {
+    margin-bottom: 10px;
+  }
+}
+.buttonContainer {
+  display: flex;
+  justify-content: flex-start; /* Ajusta a flex-start para acercar más los elementos */
+  margin-top: 20px;
+  align-items: center;
+}
+
+.deleteButtonContainer,
+.editButtonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  img {
+    max-width: 40px;
+    margin: 0 10px;
+  }
+}
+
+/* Estilos para pantallas más pequeñas (responsive) */
+@media screen and (max-width: 400px) {
+  .detailsContainer {
+    margin-top: 40px;
+  }
 }

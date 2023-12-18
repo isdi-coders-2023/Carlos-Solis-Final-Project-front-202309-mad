@@ -5,15 +5,18 @@
   padding-inline: 1rem;
   min-height: 15vh;
   display: flex;
-  align-items: center;
+  flex-direction: column; /* Cambiado a diseño de columna para centrar el botón */
+  align-items: center; /* Centra el contenido horizontalmente */
   justify-content: space-between;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .logotipo {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center; /* Centra el contenido horizontalmente */
+  justify-content: center;
 }
 
 .enunciado {
@@ -21,7 +24,27 @@
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 2rem;
   color: white;
-  margin: 0; /* Añadido para eliminar el margen predeterminado del h1 */
-  text-align: center; /* Centra el texto horizontalmente */
+  margin: 0;
+  text-align: center;
   font-size: medium;
+}
+
+/* Estilos para pantallas más pequeñas (responsive) */
+@media screen and (max-width: 400px) {
+  .header {
+    height: 20vh;
+  }
+
+  .logotipo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .enunciado {
+    font-size: 1.5rem;
+  }
+
+  button {
+    margin-top: 10px; /* Ajusta la separación del botón del contenido superior */
+  }
 }

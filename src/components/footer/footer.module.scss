@@ -3,15 +3,29 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  max-width: 98vw; /* Cambiado a max-width y ajustado a 100vw */
-  height: 15vh; /* Ajusta la altura según sea necesario */
+  max-width: 98vw;
+  height: 15vh;
   padding: 1rem;
   padding-inline: 1rem;
+  border-top-left-radius: 10px; /* Bordes redondeados en la esquina superior izquierda */
+  border-top-right-radius: 10px; /* Bordes redondeados en la esquina superior derecha */
 }
 
 .logotipo {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center; /* Centra el contenido horizontalmente */
+  justify-content: center;
+}
+
+/* Estilos para pantallas más pequeñas (responsive) */
+@media screen and (max-width: 400px) {
+  .footer {
+    height: 20vh; /* Ajusta la altura para pantallas más pequeñas */
+  }
+
+  .logotipo {
+    flex-direction: column; /* Cambia a diseño de columna en pantallas más pequeñas */
+    text-align: center; /* Centra el texto en pantallas más pequeñas */
+  }
 }

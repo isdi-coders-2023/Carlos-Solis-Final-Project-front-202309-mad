@@ -1,6 +1,47 @@
-h2 {
+.titleAndForm {
+  text-align: center;
+}
+
+.createMonumentForm {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  align-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px; /* Limita el ancho del formulario para evitar que sea demasiado ancho en pantallas grandes */
+  margin: 0 auto; /* Centra el formulario horizontalmente */
+}
+
+.createMonumentForm input,
+.createMonumentForm select {
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.createMonumentForm input[name='description'] {
+  height: 100px;
+}
+
+.createMonumentForm button {
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Estilos para pantallas más pequeñas (responsive) */
+@media screen and (max-width: 600px) {
+  .createMonumentForm {
+    padding: 15px;
+  }
+
+  .createMonumentForm input,
+  .createMonumentForm select {
+    margin-bottom: 8px;
+  }
+
+  .createMonumentForm button {
+    padding: 8px;
+  }
 }
