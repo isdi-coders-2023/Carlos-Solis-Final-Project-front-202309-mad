@@ -1,16 +1,26 @@
 .footer {
   background-color: red;
-  position: absolute;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   bottom: 0;
-  width: 100%;
-  max-width: 98vw;
-  height: 15vh;
-  padding: 1rem;
-  padding-inline: 1rem;
-  border-top-left-radius: 10px; /* Bordes redondeados en la esquina superior izquierda */
-  border-top-right-radius: 10px; /* Bordes redondeados en la esquina superior derecha */
+  width: 98.5%;
+  text-align: center;
+  padding: 9px;
+  position: absolute;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
+.footerlogo {
+  margin-bottom: 0px;
+}
+
+p {
+  font-size: 0.8em;
+  margin-bottom: 0px;
+}
 .logotipo {
   display: flex;
   flex-direction: row;
@@ -18,14 +28,13 @@
   justify-content: center;
 }
 
-/* Estilos para pantallas más pequeñas (responsive) */
 @media screen and (max-width: 400px) {
   .footer {
-    height: 20vh; /* Ajusta la altura para pantallas más pequeñas */
+    height: 15vh; /* Ajusta la altura según tus necesidades */
   }
 
   .logotipo {
-    flex-direction: column; /* Cambia a diseño de columna en pantallas más pequeñas */
-    text-align: center; /* Centra el texto en pantallas más pequeñas */
+    flex-direction: column;
+    text-align: center;
   }
 }

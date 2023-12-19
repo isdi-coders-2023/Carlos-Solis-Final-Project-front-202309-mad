@@ -65,15 +65,15 @@ export class ApiRepoMonuments {
     return response.json();
   }
 
-  async getMonumentById(id: string): Promise<Monument> {
-    const url = this.apiUrl + `/find/${id}`;
-    const response = await fetch(url, {
-      method: 'GET',
-    });
+  // async getMonumentById(id: string): Promise<Monument> {
+  //   const url = this.apiUrl + `/find/${id}`;
+  //   const response = await fetch(url, {
+  //     method: 'GET',
+  //   });
 
-    if (!response.ok)
-      throw new Error(response.status + ' ' + response.statusText);
+  //   if (!response.ok)
+  //     throw new Error(response.status + ' ' + response.statusText);
 
-    return response.json();
-  }
+  //   return response.json();
+  // }
 }

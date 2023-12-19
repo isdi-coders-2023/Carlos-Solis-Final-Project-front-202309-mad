@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.92% </span>
+                <span class="strong">68.42% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>10/13</span>
+                <span class='fraction'>13/19</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">20% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/9</span>
+                <span class='fraction'>3/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/8</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
@@ -82,16 +82,38 @@
 <a name='L17'></a><a href='#L17'>17</a>
 <a name='L18'></a><a href='#L18'>18</a>
 <a name='L19'></a><a href='#L19'>19</a>
-<a name='L20'></a><a href='#L20'>20</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -104,18 +126,29 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Route, Routes } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 &nbsp;
-const HomePage = lazy(() =&gt; import('../../../pages/home.page'));
-const LoginPage = lazy(<span class="fstat-no" title="function not covered" >() =</span>&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > import('</span>../../../pages/login.page'))</span>;
-const RegisterPage = lazy(<span class="fstat-no" title="function not covered" >() =</span>&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > import('</span>../../../pages/register.page'))</span>;
-const ErrorPage = lazy(<span class="fstat-no" title="function not covered" >() =</span>&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > import('</span>../../../pages/error.page'))</span>;
-&nbsp;
+const HomePage = lazy(<span class="fstat-no" title="function not covered" >() =</span>&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > import('</span>../pages/home.page'))</span>;
+const LoginPage = lazy(() =&gt; import('../pages/login.page'));
+const RegisterPage = lazy(<span class="fstat-no" title="function not covered" >() =</span>&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > import('</span>../pages/register.page'))</span>;
+const ErrorPage = lazy(<span class="fstat-no" title="function not covered" >() =</span>&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > import('</span>../pages/error.page'))</span>;
+const CreateMonumentPage = lazy(<span class="fstat-no" title="function not covered" >() =</span>&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > import('</span>../pages/create.monument.page'))</span>;
+const DetailsPage = lazy(<span class="fstat-no" title="function not covered" >() =</span>&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > import('</span>../pages/details.page'))</span>;
+const EditMonumentPage = lazy(<span class="fstat-no" title="function not covered" >() =</span>&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > import('</span>../pages/edit.page'))</span>;
 export const AppRoutes = () =&gt; (
   &lt;Suspense&gt;
     &lt;Routes&gt;
-      &lt;Route path="/" element={&lt;HomePage&gt;&lt;/HomePage&gt;}&gt;&lt;/Route&gt;
+      &lt;Route path="/" element={&lt;LoginPage&gt;&lt;/LoginPage&gt;}&gt;&lt;/Route&gt;
       &lt;Route path="/home" element={&lt;HomePage&gt;&lt;/HomePage&gt;}&gt;&lt;/Route&gt;
       &lt;Route path="/login" element={&lt;LoginPage&gt;&lt;/LoginPage&gt;}&gt;&lt;/Route&gt;
       &lt;Route path="/register" element={&lt;RegisterPage&gt;&lt;/RegisterPage&gt;}&gt;&lt;/Route&gt;
+      &lt;Route
+        path="/create"
+        element={&lt;CreateMonumentPage&gt;&lt;/CreateMonumentPage&gt;}
+      &gt;&lt;/Route&gt;
+      &lt;Route
+        path="/editpage/:id"
+        element={&lt;EditMonumentPage&gt;&lt;/EditMonumentPage&gt;}
+      &gt;&lt;/Route&gt;
+      &lt;Route path="/details/:id" element={&lt;DetailsPage&gt;&lt;/DetailsPage&gt;}&gt;&lt;/Route&gt;
       &lt;Route path="/error" element={&lt;ErrorPage&gt;&lt;/ErrorPage&gt;}&gt;&lt;/Route&gt;
     &lt;/Routes&gt;
   &lt;/Suspense&gt;
@@ -127,7 +160,7 @@ export const AppRoutes = () =&gt; (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-13T15:18:15.740Z
+                at 2023-12-18T17:26:16.466Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

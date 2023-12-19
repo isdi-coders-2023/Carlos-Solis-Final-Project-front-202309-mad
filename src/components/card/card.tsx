@@ -19,15 +19,15 @@ export function Card({ monument }: Props) {
             <img
               src={monument.monumentImg.url}
               alt={`imagen de ${monument.name}`}
-              className={styles.recipeImg}
+              className={styles.monumentImg}
             ></img>
           </figure>
           <div className="card-info-container">
             <div className={styles.cardtitle}>
               <p className={styles.cardtitleP}>{monument.name}</p>
             </div>
-            <div className={styles.cardIngredients}>
-              <p className={styles.cardIngredientsP}>{monument.culture}</p>
+            <div className={styles.cardCulture}>
+              <p className={styles.cardCultureP}>{monument.culture}</p>
             </div>
             <div className={styles.cardDescription}>
               <p className={styles.cardDescriptionP}>{monument.description}</p>

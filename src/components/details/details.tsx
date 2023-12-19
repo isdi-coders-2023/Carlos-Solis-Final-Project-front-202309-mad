@@ -9,7 +9,7 @@ export function Details() {
   const { currentMonument } = useSelector(
     (state: RootState) => state.MonumentsState
   );
-  const { deleteMonument, monumentDeleteState } = useMonuments();
+  const { deleteMonument /*, monumentDeleteState */ } = useMonuments();
   const handleDelete = () => {
     deleteMonument(currentMonument!.id);
     navigate(`/home/`);
@@ -20,7 +20,7 @@ export function Details() {
   };
 
   return (
-    <>
+    <div className={styles.detailsContainer}>
       <div className={styles.details}>
         <img
           src={currentMonument?.monumentImg.url}
@@ -38,26 +38,27 @@ export function Details() {
           </div>
         </div>
       </div>
-
       <div className={styles.buttonContainer}>
-        <div className={styles.deleteButtonContainer}>
-          <Link to={`/login`}></Link>
-          <img
-            onClick={handleDelete}
-            role="button"
-            src="../../../public/logodelete.png"
-            alt="Delete image"
-          />
-        </div>
-        <div className={styles.editButtonContainer}>
-          <img
-            onClick={handleUpdate}
-            role="button"
-            src="../../../public/0b191d72b16f7d2e643ef7cbfbb4f562-icono-de-escuela-de-trazo-de-lapiz.png"
-            alt="Modify image"
-          />
+        <div className={styles.actionButtons}>
+          <div className={styles.deleteButtonContainer}>
+            <Link to={`/login`}></Link>
+            <img
+              onClick={handleDelete}
+              role="button"
+              src="../../../public/logodelete.png"
+              alt="Delete image"
+            />
+          </div>
+          <div className={styles.editButtonContainer}>
+            <img
+              onClick={handleUpdate}
+              role="button"
+              src="../../../public/0b191d72b16f7d2e643ef7cbfbb4f562-icono-de-escuela-de-trazo-de-lapiz.png"
+              alt="Modify image"
+            />
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

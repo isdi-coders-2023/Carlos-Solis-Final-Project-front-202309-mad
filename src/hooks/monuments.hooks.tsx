@@ -4,7 +4,6 @@ import { ApiRepoMonuments } from '../services/api.repo.monuments';
 import {
   createMonumentThunk,
   deleteMonumentThunk,
-  loadOneMonumentThunk,
   loadMonumentsThunk,
   updateMonumentThunk,
 } from '../slice/monuments.thunk';
@@ -32,9 +31,9 @@ export function useMonuments() {
     dispatch(loadMonumentsThunk(monumentsRepo));
   }, [monumentsRepo, dispatch]);
 
-  const loadOneMonument = (id: string) => {
-    dispatch(loadOneMonumentThunk({ repo: monumentsRepo, id }));
-  };
+  // const loadOneMonument = (id: string) => {
+  //   dispatch(loadOneMonumentThunk({ repo: monumentsRepo, id }));
+  // };
 
   const deleteMonument = (id: string) => {
     dispatch(deleteMonumentThunk({ repo: monumentsRepo, id }));
@@ -55,7 +54,7 @@ export function useMonuments() {
 
   return {
     loadAllMonuments,
-    loadOneMonument,
+
     deleteMonument,
     createMonument,
     updateCurrentMonument,

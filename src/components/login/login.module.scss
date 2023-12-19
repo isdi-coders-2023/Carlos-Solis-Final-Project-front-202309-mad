@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #f0f0f0; /* Color de fondo gris */
+  background-color: #f0f0f0;
 }
 
 .loginForm {
@@ -12,10 +12,13 @@
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
-  background-color: white; /* Cambiado a blanco para el fondo del formulario */
+  background-color: white;
   border-radius: 8px;
-  margin-top: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para resaltar el formulario */
+  margin-top: auto; /* Ajusta la posición vertical del formulario */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Alinea el contenido del formulario en columna */
+  align-items: center; /* Centra el contenido en el eje horizontal */
 }
 
 .submitButton {

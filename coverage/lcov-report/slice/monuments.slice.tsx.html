@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.02% </span>
+                <span class="strong">90.56% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>40/43</span>
+                <span class='fraction'>48/53</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
+                <span class="strong">81.25% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>12/14</span>
+                <span class='fraction'>13/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.02% </span>
+                <span class="strong">90.56% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>40/43</span>
+                <span class='fraction'>48/53</span>
             </div>
         
             
@@ -183,7 +183,26 @@
 <a name='L118'></a><a href='#L118'>118</a>
 <a name='L119'></a><a href='#L119'>119</a>
 <a name='L120'></a><a href='#L120'>120</a>
-<a name='L121'></a><a href='#L121'>121</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">6x</span>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -271,7 +290,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
@@ -281,14 +310,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -317,18 +355,18 @@ export type MonumentsState = {
   currentMonument: Monument | null;
   monuments: Monument[];
   monumentState: 'idle' | 'loading' | 'loaded' | 'error';
-  monumentDeleteState: 'idle' | 'loading';
-  monumentFilter: 'Todos los monumentos' | 'Arab' | 'Roman';
-  monumentUpdateState: 'iddle' | 'loading';
+  monumentUpdateState: 'idle' | 'loading';
+  monumentDeleteState: 'idle' | 'loading' | 'deleted' | 'error';
+  monumentFilter: 'Mis monumentos' | 'Arab' | 'Roman' | 'Todos los monumentos';
 };
 &nbsp;
 const initialState: MonumentsState = {
   currentMonument: null,
   monuments: [],
   monumentState: 'idle',
+  monumentUpdateState: 'idle',
   monumentDeleteState: 'idle',
   monumentFilter: 'Todos los monumentos',
-  monumentUpdateState: 'iddle',
 };
 &nbsp;
 export const monumentsSlice = createSlice({
@@ -390,9 +428,19 @@ export const monumentsSlice = createSlice({
           state.monuments.findIndex(<span class="fstat-no" title="function not covered" >(i</span>tem) =&gt; <span class="cstat-no" title="statement not covered" >item.id === payload)</span>,
           1
         );
+        state.monumentDeleteState = 'deleted';
         return state;
       }
     );
+    builder.addCase(deleteMonumentThunk.pending, (state: MonumentsState) =&gt; {
+      state.monumentDeleteState = 'loading';
+      return state;
+    });
+&nbsp;
+    builder.addCase(deleteMonumentThunk.rejected, <span class="fstat-no" title="function not covered" >(s</span>tate: MonumentsState) =&gt; {
+<span class="cstat-no" title="statement not covered" >      state.monumentState = 'error';</span>
+<span class="cstat-no" title="statement not covered" >      return state;</span>
+    });
 &nbsp;
     builder.addCase(
       createMonumentThunk.fulfilled,
@@ -401,15 +449,24 @@ export const monumentsSlice = createSlice({
         monuments: [...state.monuments, payload],
       })
     );
+&nbsp;
     builder.addCase(
       updateMonumentThunk.fulfilled,
       (state: MonumentsState, { payload }: PayloadAction&lt;Monument&gt;) =&gt; {
-        const findMonument =
-          state.monuments[
-            state.monuments.findIndex((item) =&gt; item.id === payload.id)
-          ];
-        state.monumentUpdateState = 'iddle';
-        state.currentMonument = findMonument;
+        const findMonumentIndex = state.monuments.findIndex(
+          (item) =&gt; item.id === payload.id
+        );
+        if (findMonumentIndex !== -1) {
+          state.monuments[findMonumentIndex] = payload;
+          if (
+            state.currentMonument &amp;&amp;
+            state.currentMonument.id === payload.id
+          ) {
+            state.currentMonument = payload;
+          }
+        }
+&nbsp;
+        state.monumentUpdateState = 'idle';
         return state;
       }
     );
@@ -430,7 +487,7 @@ export const { setCurrentMonumentItem } = monumentsSlice.actions;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-17T16:12:46.710Z
+                at 2023-12-18T17:26:16.466Z
             </div>
         <script src="../prettify.js"></script>
         <script>

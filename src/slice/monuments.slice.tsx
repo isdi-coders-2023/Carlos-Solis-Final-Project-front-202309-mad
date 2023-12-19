@@ -3,7 +3,6 @@ import { Monument } from '../entities/monuments';
 import {
   createMonumentThunk,
   deleteMonumentThunk,
-  loadOneMonumentThunk,
   loadMonumentsThunk,
   updateMonumentThunk,
 } from './monuments.thunk';
@@ -27,7 +26,7 @@ const initialState: MonumentsState = {
 };
 
 export const monumentsSlice = createSlice({
-  name: 'monument',
+  name: 'monuments',
   initialState,
   reducers: {
     setCurrentMonumentItem(
@@ -59,24 +58,24 @@ export const monumentsSlice = createSlice({
       return state;
     });
 
-    builder.addCase(loadOneMonumentThunk.pending, (state: MonumentsState) => {
-      state.monumentState = 'loading';
-      return state;
-    });
+    // builder.addCase(loadOneMonumentThunk.pending, (state: MonumentsState) => {
+    //   state.monumentState = 'loading';
+    //   return state;
+    // });
 
-    builder.addCase(
-      loadOneMonumentThunk.fulfilled,
-      (state: MonumentsState, { payload }: PayloadAction<Monument>) => {
-        state.monumentState = 'loaded';
-        state.currentMonument = payload;
-        return state;
-      }
-    );
+    // builder.addCase(
+    //   loadOneMonumentThunk.fulfilled,
+    //   (state: MonumentsState, { payload }: PayloadAction<Monument>) => {
+    //     state.monumentState = 'loaded';
+    //     state.currentMonument = payload;
+    //     return state;
+    //   }
+    // );
 
-    builder.addCase(loadOneMonumentThunk.rejected, (state: MonumentsState) => {
-      state.monumentState = 'error';
-      return state;
-    });
+    // builder.addCase(loadOneMonumentThunk.rejected, (state: MonumentsState) => {
+    //   state.monumentState = 'error';
+    //   return state;
+    // });
 
     builder.addCase(
       deleteMonumentThunk.fulfilled,
