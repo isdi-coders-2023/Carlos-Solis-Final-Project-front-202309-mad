@@ -7,8 +7,8 @@ import { List } from './list';
 const mockMonuments = [
   {
     id: '1',
-    name: 'Test Recipe 1',
-    img: { url: 'http://test1.com' },
+    name: 'Test Monument 1',
+    img: { url: 'https://test1.com' },
     // Add other properties as needed
   },
   {
