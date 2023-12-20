@@ -1,30 +1,52 @@
-# React + TypeScript + Vite
+#Proyecto Final de Serafin Alferez Alferez-CLASSIC CARS-Backend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+##Descripción
+El proyecto se trata de una red social especializada en monumentos. Este backend está construido utilizando Node.js, Express.js y MongoDB.
 
-Currently, two official plugins are available:
+###Puntos finales (Endpoints)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. User:
 
-## Expanding the ESLint configuration
+Registro: Los usuarios pueden registrarse proporcionando la información necesaria.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Login: Los usuarios registrados pueden iniciar sesión para acceder a funcionalidades adicionales.
 
-- Configure the top-level `parserOptions` property like this:
+2. Monument:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Lista Global de Monuments: Todos los usuarios pueden acceder a la lista global de coches clásicos.
+Crear Entrada de Monuments: Solo los usuarios registrados pueden crear nuevas entradas para coches clásicos.
+Editar y Eliminar: Los usuarios registrados pueden editar o eliminar sus propias entradas de coches, pero no las creadas por otros usuarios.
+Tecnologías Utilizadas:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Node.js: El backend está construido con Node.js para el tiempo de ejecución de JavaScript en el lado del servidor.
+Express.js: Se utiliza Express.js como el marco de aplicación web para simplificar la gestión de rutas y middleware.
+MongoDB: MongoDB sirve como la base de datos para almacenar la información de usuarios y coches.
+
+###Instalación:
+
+1.Clonar el repositorio:
+git clone https://github.com/isdi-coders-2023/Carlos-Solis-Final-Project-back-202309-mad
+
+2.Navegar al directorio del proyecto:
+Carlos-Solis-Final-Project-back-202309-mad
+
+3.Instalar las dependencias:
+npm install
+
+4.Configure las variables de entorno: Cree un archivo .env en el directorio raíz del proyecto y configure las variables de entorno necesarias. Consulte el archivo .env.sample para obtener una lista de las variables requeridas.
+
+Iniciar el servidor: npm run start:dev
+
+Iniciar el compilador: npm run build
+
+## Puntos finales (Endpoints) y rutas
+
+| Tipo   | Ruta              | Controlador/Middleware        | Descripción                         |
+| ------ | ----------------- | ----------------------------- | ----------------------------------- |
+| POST   | `/users/register` | `UsersController.create`      | Registro de usuarios                |
+| POST   | `/users/login`    | `UsersController.login`       | Inicio de sesión de usuarios        |
+| GET    | `/monuments`      | `MonumentsController.getAll`  | Lista global de Monumentos          |
+| GET    | `/monuments/:id`  | `MonumentsController.getById` | Detalles de un monumento            |
+| POST   | `/monuments`      | `MonumentsController.create`  | Crear entrada de monumento          |
+| PATCH  | `/monuments/:id`  | `MonumentsController.update`  | Actualizar detalles de un monumento |
+| DELETE | `/monuments/:id`  | `MonumentsController.delete`  | Eliminar un monumento               |
