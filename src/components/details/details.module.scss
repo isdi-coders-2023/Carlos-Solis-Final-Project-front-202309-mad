@@ -1,65 +1,68 @@
-.detailsContainer {
+.details {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
   padding: 20px;
-  box-sizing: border-box;
-  background-color: #f0f0f0;
+  background-color: #fff;
+  border: 1px solid #ddd;
   border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  height: 70vh;
 }
 
-.details {
+.buttons {
   display: flex;
-  align-items: center;
-  text-align: center;
-
-  img {
-    max-width: 100%;
-    margin-right: 20px;
-  }
-
-  div {
-    flex: 1;
-    text-align: left;
-  }
-
-  .card-name,
-  .card-culture,
-  .card-description {
-    margin-bottom: 10px;
-  }
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  margin: 1rem;
 }
 
-.buttonContainer {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+.deleteButtonContainer img,
+.editButtonContainer img {
+  height: 1.5rem;
+  margin: 1.5rem;
 }
 
-.actionButtons {
-  display: flex;
+.details img {
+  width: 100%;
+  max-height: 1000px;
+
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.cardName {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.cardIngredients,
+.cardDescription {
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
 .deleteButtonContainer,
 .editButtonContainer {
   display: flex;
   align-items: center;
-
-  Link {
-    // ... (Estilos para el enlace, si es necesario)
-  }
-
-  img {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    margin-right: 150px; /* Ajusta el margen derecho para separar más los botones */
-  }
+  margin-top: 10px;
 }
 
-.editButtonContainer {
-  img {
-    margin-left: 15px; /* Ajusta el margen izquierdo para separar más los botones */
-  }
+.deleteButtonContainer img,
+.editButtonContainer img {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.deleteButtonContainer img:hover,
+.editButtonContainer img:hover {
+  filter: brightness(85%);
+}
+.detailsContainer {
+  height: 75vh;
 }

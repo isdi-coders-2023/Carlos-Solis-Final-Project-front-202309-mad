@@ -4,7 +4,6 @@ import { appStore } from '../store/store';
 import {
   createMonumentThunk,
   deleteMonumentThunk,
-  loadOneMonumentThunk,
   loadMonumentsThunk,
   updateMonumentThunk,
 } from './monuments.thunk';
@@ -22,13 +21,6 @@ describe('Given loadMonumentsThunk', () => {
     test('Then it should dispatch', async () => {
       await appStore.dispatch(loadMonumentsThunk(mockedRepo));
       expect(mockedRepo.getAllMonuments).toHaveBeenCalled();
-    });
-
-    test('Then it should dispatch', async () => {
-      await appStore.dispatch(
-        loadOneMonumentThunk({ repo: mockedRepo, id: '' })
-      );
-      expect(mockedRepo.getMonumentById).toHaveBeenCalled();
     });
 
     test('Then it should dispatch', async () => {
@@ -66,13 +58,6 @@ describe('Given loadMonumentsThunk', () => {
     test('Then it should dispatch', async () => {
       await appStore.dispatch(loadMonumentsThunk(mockedRepo));
       expect(mockedRepo.getAllMonuments).toHaveBeenCalled();
-    });
-
-    test('Then it should dispatch', async () => {
-      await appStore.dispatch(
-        loadOneMonumentThunk({ repo: mockedRepo, id: '' })
-      );
-      expect(mockedRepo.getMonumentById).toHaveBeenCalled();
     });
   });
 });

@@ -1,5 +1,5 @@
 import { SyntheticEvent, useEffect, useState } from 'react';
-
+import styles from './login.module.scss';
 import { useUsers } from '../../hooks/users.hooks';
 import { LoginUser } from '../../entities/user';
 import { Link, useNavigate } from 'react-router-dom';
@@ -27,10 +27,9 @@ export function Login() {
     }
   }, [hasLogin, navigate]);
   return (
-    <>
-      <h2>Inicia sesión</h2>
+    <div className={styles.loginForm}>
       {!hasLogin && (
-        <form onSubmit={handleSubmit} className="login-form" role="form">
+        <form onSubmit={handleSubmit} role="form">
           <input type="email" name="email" placeholder="Email" required />
           <input
             type="password"
@@ -51,6 +50,6 @@ export function Login() {
           </div>
         </form>
       )}
-    </>
+    </div>
   );
 }

@@ -14,8 +14,3 @@ header {
 main {
   flex-grow: 1; /* Hace que el main ocupe todo el espacio disponible */
 }
-
-footer {
-  background-color: lightcoral; /* Color de fondo del footer */
-  flex-shrink: 0; /* Evita que el footer se reduzca cuando el contenido crece */
-}

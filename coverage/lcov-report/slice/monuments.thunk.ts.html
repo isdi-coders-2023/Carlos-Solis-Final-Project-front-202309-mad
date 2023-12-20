@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>16/16</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>16/16</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
@@ -106,19 +106,11 @@
 <a name='L41'></a><a href='#L41'>41</a>
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">6x</span>
+<a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -126,7 +118,15 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -134,7 +134,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -142,7 +142,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -156,23 +156,23 @@ import { Monument } from '../entities/monuments.ts';
 export const loadMonumentsThunk = createAsyncThunk&lt;
   Monument[],
   ApiRepoMonuments
-&gt;('monuments/load', async (repo) =&gt; {
+&gt;('load', async (repo) =&gt; {
   const monuments = await repo.getAllMonuments();
   return monuments;
 });
 &nbsp;
-export const loadOneMonumentThunk = createAsyncThunk&lt;
-  Monument,
-  { repo: ApiRepoMonuments; id: Monument['id'] }
-&gt;('monument/load', async ({ repo, id }) =&gt; {
-  const monument = await repo.getMonumentById(id);
-  return monument;
-});
+// export const loadOneMonumentThunk = createAsyncThunk&lt;
+//   Monument,
+//   { repo: ApiRepoMonuments; id: Monument['id'] }
+// &gt;('monument/load', async ({ repo, id }) =&gt; {
+//   const monument = await repo.getMonumentById(id);
+//   return monument;
+// });
 &nbsp;
 export const createMonumentThunk = createAsyncThunk&lt;
   Monument,
   { repo: ApiRepoMonuments; monumentToAdd: FormData }
-&gt;('monuments/create', async ({ repo, monumentToAdd }) =&gt; {
+&gt;('create', async ({ repo, monumentToAdd }) =&gt; {
   const createMonument = await repo.createMonument(monumentToAdd);
   return createMonument;
 });
@@ -180,7 +180,7 @@ export const createMonumentThunk = createAsyncThunk&lt;
 export const updateMonumentThunk = createAsyncThunk&lt;
   Monument,
   { repo: ApiRepoMonuments; id: Monument['id']; monumentToUpdate: FormData }
-&gt;('monuments/update', async ({ repo, id, monumentToUpdate }) =&gt; {
+&gt;('update', async ({ repo, id, monumentToUpdate }) =&gt; {
   const updateMonument = await repo.updateMonument(id, monumentToUpdate);
   return updateMonument;
 });
@@ -199,7 +199,7 @@ export const deleteMonumentThunk = createAsyncThunk&lt;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-18T17:26:16.466Z
+                at 2023-12-20T17:09:21.296Z
             </div>
         <script src="../prettify.js"></script>
         <script>

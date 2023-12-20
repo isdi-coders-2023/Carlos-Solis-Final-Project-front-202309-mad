@@ -1,33 +1,69 @@
-.loginContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #f0f0f0;
-}
-
 .loginForm {
   max-width: 400px;
-  width: 100%;
+  margin: auto;
   padding: 20px;
-  box-sizing: border-box;
-  background-color: white;
+  border: 1px solid #ccc;
   border-radius: 8px;
-  margin-top: auto; /* Ajusta la posición vertical del formulario */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column; /* Alinea el contenido del formulario en columna */
-  align-items: center; /* Centra el contenido en el eje horizontal */
-}
+  background-color: #fff;
+  height: 70vh;
 
-.submitButton {
-  width: 100%;
-  padding: 10px;
-  cursor: pointer;
-  margin-top: 10px;
-}
+  h2 {
+    text-align: center;
+    color: #333;
+  }
 
-.registerLinkButton {
-  margin-top: 10px;
+  form {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 12px;
+      cursor: pointer;
+      font-size: 16px;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+
+    p {
+      text-align: center;
+      color: #555;
+    }
+
+    .register-link-button {
+      text-align: center;
+      margin-top: 15px;
+
+      a button {
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 16px;
+
+        &:hover {
+          background-color: #218838;
+        }
+      }
+    }
+    @media screen and (max-width: 360px) {
+      height: 80vh;
+    }
+  }
 }

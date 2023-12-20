@@ -2,8 +2,6 @@ import { Card } from '../card/card';
 import styles from './list.module.scss';
 import { Monument } from '../../entities/monuments';
 
-//import { useRecipes } from '../../hooks/recipes.hook';
-
 //
 type Props = {
   monumentsToRender: Monument[] | undefined;

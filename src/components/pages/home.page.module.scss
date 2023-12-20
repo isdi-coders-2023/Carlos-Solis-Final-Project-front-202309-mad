@@ -1,21 +1,54 @@
-.entrada {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  font-size: 2rem;
-}
-.homebuttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 12rem;
-  margin: 0;
+.mainPageContainer {
+  padding: 20px;
 }
 
-.create-link-button {
+.createLinkButton {
+  text-align: center; /* Centra el botón */
+  margin-bottom: 40px; /* Ajusta la distancia del botón al header */
+}
+.createButton {
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background-color: royalblue; /* Color azul */
+  color: white; /* Texto blanco */
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    background-color: dodgerblue; /* Cambio de color al pasar el ratón */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.categoriesContainer {
   display: flex;
-  flex-direction: row-reverse;
-  align-content: stretch;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
   justify-content: center;
+  h2 {
+    margin: 0;
+    text-align: center;
+  }
+}
+
+/* Otros estilos que ya tienes */
+
+.listContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Alineación vertical al centro */
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 100%;
+}
+
+.listContainer::-webkit-scrollbar {
+  overflow: hidden;
+}
+.category {
+  width: 100%;
 }

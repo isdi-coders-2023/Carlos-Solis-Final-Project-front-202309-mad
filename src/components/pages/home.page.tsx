@@ -32,7 +32,7 @@ export default function MainPage() {
     <div className={styles.homePageContainer}>
       <div className={styles.createLinkButton}>
         <Link to={'/create'}>
-          <button type="button">Crea monumento</button>
+          <button type="button">Crea tu monumento</button>
         </Link>
       </div>
       <div className={styles.categoriesContainer}>

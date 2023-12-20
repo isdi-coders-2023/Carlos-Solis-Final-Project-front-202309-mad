@@ -17,6 +17,10 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-top: 10px; /* Ajusta el margen según tus preferencias */
+}
+h2 {
+  margin-left: 1000px;
 }
 
 .enunciado {
@@ -30,7 +34,7 @@
 }
 
 /* Estilos para pantallas más pequeñas (responsive) */
-@media screen and (max-width: 400px) {
+@media (max-width: 400px) {
   .header {
     height: 20vh;
   }
@@ -47,4 +51,5 @@
   button {
     margin-top: 10px; /* Ajusta la separación del botón del contenido superior */
   }
+  //@media (max-width:320px){
 }

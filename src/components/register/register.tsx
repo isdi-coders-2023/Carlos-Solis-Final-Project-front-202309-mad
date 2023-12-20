@@ -1,6 +1,6 @@
 import { SyntheticEvent, useState } from 'react';
 import { useUsers } from '../../hooks/users.hooks';
-import { registerForm } from './register.module.scss';
+import style from './register.module.scss';
 import { User } from '../../entities/user';
 import { Link } from 'react-router-dom';
 
@@ -29,9 +29,12 @@ export function Register() {
 
   return (
     <>
-      <h2>Registro</h2>
       {!hasRegister && (
-        <form onSubmit={handleSubmit} className={registerForm} role="form">
+        <form
+          onSubmit={handleSubmit}
+          className={style.registerForm}
+          role="form"
+        >
           <input type="text" name="username" placeholder="Nombre de usuario" />
           <input type="email" name="email" placeholder="Email" required />
           <input
@@ -41,13 +44,16 @@ export function Register() {
             required
           />
           <button type="submit">Registrar</button>
-          <button type="button">Cancelar</button>
+          <Link to={'/login'}>
+            {' '}
+            <button type="button">Cancelar</button>
+          </Link>
         </form>
       )}
       {hasRegister && (
         <div>
           <p>Registrado correctamente</p>
-          <div className="home-link-button">
+          <div className={style.registered}>
             <Link to={'/home'}>
               <button type="button" onClick={handleCloseOk}>
                 Continuar

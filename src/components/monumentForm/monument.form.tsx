@@ -24,7 +24,12 @@ export default function MonumentForm() {
         className={styles.createMonumentForm}
         role="form"
       >
-        <input type="text" name="name" placeholder="Titulo del monumento" />
+        <input
+          type="text"
+          name="name"
+          placeholder="Titulo del monumento"
+          required
+        />
         <input type="text" name="culture" placeholder="cultura" required />
         <input
           type="text"

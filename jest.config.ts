@@ -19,5 +19,6 @@ export default {
     'src/pages/admin.panel/admin.panel.tsx',
     'src/pages/login/login.tsx',
     'src/pages/register/register.tsx',
+    'src/components/app.routes/app.routes.tsx',
   ],
 };

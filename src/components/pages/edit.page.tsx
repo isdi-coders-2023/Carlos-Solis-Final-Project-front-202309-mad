@@ -2,6 +2,7 @@ import { SyntheticEvent, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useMonuments } from '../../hooks/monuments.hooks';
 import React from 'react';
+import styles from './edit.page.module.scss';
 
 export default function EditMonumentPage() {
   const navigate = useNavigate();
@@ -48,11 +49,10 @@ export default function EditMonumentPage() {
   };
 
   return (
-    <div /* className={styles.titleAndForm} */>
-      <h2>Edita tu monumento</h2>
+    <div className={styles.titleAndForm}>
       <form onSubmit={handleUpdate} role="form">
         <label htmlFor="monumentName">
-          test
+          Nombre del monumento
           <input
             type="text"
             name="monumentName"
@@ -60,7 +60,7 @@ export default function EditMonumentPage() {
             onChange={handleInputChange}
           />
         </label>
-
+        Cultura
         <input
           type="text"
           name="culture"
@@ -68,6 +68,7 @@ export default function EditMonumentPage() {
           onChange={handleInputChange}
           required
         />
+        Breve descripcion
         <input
           type="text"
           name="description"
@@ -90,7 +91,7 @@ export default function EditMonumentPage() {
           id="img"
           placeholder="Inserta aqui la imagen "
         />
-        <button type="submit">Crear</button>
+        <button type="submit">Actualizar</button>
       </form>
     </div>
   );

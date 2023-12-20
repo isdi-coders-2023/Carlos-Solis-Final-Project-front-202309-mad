@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import { appStore } from '../../store/store';
 import { useUsers } from '../../hooks/users.hooks';
 
-jest.mock('../../hooks/users.hook', () => ({
+jest.mock('../../hooks/users.hooks', () => ({
   useUsers: jest.fn().mockReturnValue({
     login: jest.fn(),
   }),

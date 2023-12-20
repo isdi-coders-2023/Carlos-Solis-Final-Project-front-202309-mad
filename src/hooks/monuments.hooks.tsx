@@ -31,10 +31,6 @@ export function useMonuments() {
     dispatch(loadMonumentsThunk(monumentsRepo));
   }, [monumentsRepo, dispatch]);
 
-  // const loadOneMonument = (id: string) => {
-  //   dispatch(loadOneMonumentThunk({ repo: monumentsRepo, id }));
-  // };
-
   const deleteMonument = (id: string) => {
     dispatch(deleteMonumentThunk({ repo: monumentsRepo, id }));
   };
@@ -46,7 +42,6 @@ export function useMonuments() {
   };
 
   const updateCurrentMonument = (id: string, monumentToUpdate: FormData) => {
-    console.log('desde el hook', token);
     dispatch(
       updateMonumentThunk({ repo: monumentsRepo, id, monumentToUpdate })
     );
