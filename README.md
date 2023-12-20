@@ -26,7 +26,7 @@ Node.js: El backend está construido con Node.js para el tiempo de ejecución de
 
 Iniciar el servidor: npm run start:dev
 
-Iniciar el compilador: npm run build
+Iniciar el compilador: npm run build.
 
 Puntos finales (Endpoints) y rutas
 Tipo Ruta Controlador/Middleware Descripción
