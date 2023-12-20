@@ -1,0 +1,16 @@
+body {
+  margin: 0; /* Elimina el margen predeterminado del body */
+  padding: 0; /* Elimina el relleno predeterminado del body */
+  height: 100vh; /* Establece la altura del body al 100% de la altura de la ventana */
+  display: flex;
+  flex-direction: column; /* Coloca los elementos hijos (header, main, footer) en columna */
+}
+
+header {
+  background-color: lightblue; /* Color de fondo del header */
+  flex-shrink: 0; /* Evita que el header se reduzca cuando el contenido crece */
+}
+
+main {
+  flex-grow: 1; /* Hace que el main ocupe todo el espacio disponible */
+}

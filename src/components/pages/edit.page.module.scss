@@ -1,0 +1,86 @@
+.titleAndForm {
+  text-align: center;
+  margin: 20px auto; /* Centra el formulario en la pantalla */
+  max-width: 1000px; /* Aumenta el ancho del formulario */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 67vh;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 14px;
+  margin-bottom: 8px; /* Ajusta la separación entre etiquetas */
+  color: #555;
+}
+
+input,
+select {
+  padding: 10px; /* Aumenta el espacio interno en los campos de entrada */
+  margin-bottom: 15px; /* Aumenta la separación entre campos de entrada */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Establece un tamaño específico para el campo de descripción */
+input[name='description'] {
+  height: 100px;
+}
+
+button {
+  padding: 12px; /* Aumenta el espacio interno en el botón */
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Estilos para pantallas más pequeñas (responsive) */
+@media screen and (max-width: 360px) {
+  .titleAndForm {
+    max-width: 300px; /* Ajusta el ancho para pantallas pequeñas */
+  }
+
+  h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  label {
+    font-size: 12px;
+    margin-bottom: 6px; /* Ajusta la separación entre etiquetas en pantallas pequeñas */
+  }
+
+  input,
+  select {
+    padding: 8px; /* Ajusta el espacio interno en campos de entrada en pantallas pequeñas */
+    margin-bottom: 10px; /* Ajusta la separación entre campos de entrada en pantallas pequeñas */
+  }
+
+  button {
+    padding: 10px; /* Ajusta el espacio interno en el botón en pantallas pequeñas */
+  }
+
+  /* Ajusta el tamaño del campo de descripción para pantallas pequeñas */
+  input[name='description'] {
+    height: 80px;
+  }
+}

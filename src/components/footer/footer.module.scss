@@ -1,0 +1,26 @@
+.footer {
+  background-color: red;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  width: 98.5%;
+  padding: 9px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.footerlogo {
+  margin-bottom: 0px;
+}
+
+p {
+  font-size: 0.8em;
+  margin-bottom: 0px;
+}
+.logotipo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,72 @@
+.registerContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  width: 90vw; /* Ancho del formulario ajustado */
+  margin-top: 250px; /* Ajusta el margen superior según tus preferencias */
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 100px;
+  height: 53vh;
+}
+
+.registerForm input {
+  margin-bottom: 10px; /* Aumentar el espacio entre los inputs */
+  padding: 12px; /* Ajusta el padding según tus preferencias */
+  font-size: 16px; /* Ajusta el tamaño de la fuente según tus preferencias */
+  border: 1px solid #ddd;
+  border-radius: 8px; /* Ajusta el radio de borde según tus preferencias */
+  background-color: #f8f8f8;
+  width: 100%; /* Inputs ocupan el 100% del ancho del contenedor */
+  max-width: 700px; /* Ancho máximo de los inputs */
+}
+
+.registerForm input[type='password'] {
+  margin-bottom: 30px; /* Aumentar el espacio entre los inputs */
+  padding: 12px; /* Ajusta el padding según tus preferencias */
+  font-size: 16px; /* Ajusta el tamaño de la fuente según tus preferencias */
+  border: 1px solid #ddd;
+  border-radius: 8px; /* Ajusta el radio de borde según tus preferencias */
+  background-color: #f8f8f8;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+.registerForm button {
+  background-color: #cbe3f2;
+  color: #0a0a0a;
+  border: none;
+  border-radius: 8px; /* Ajusta el radio de borde según tus preferencias */
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.registerForm button:hover {
+  background-color: rgb(133, 182, 215);
+}
+
+.cancelButton button {
+  background-color: #cbe3f2;
+  color: #0a0a0a;
+  border: none;
+  border-radius: 8px; /* Ajusta el radio de borde según tus preferencias */
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cancelButton button:hover {
+  background-color: rgb(133, 182, 215);
+}
+.registered {
+  height: 75vh;
+}
