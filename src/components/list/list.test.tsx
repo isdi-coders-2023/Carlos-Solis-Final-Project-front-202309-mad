@@ -8,7 +8,7 @@ const mockMonuments = [
   {
     id: '1',
     name: 'Test Recipe 1',
-    img: { url: 'http://test1.com' },
+    img: { url: 'https://test1.com' },
     // Add other properties as needed
   },
   {
